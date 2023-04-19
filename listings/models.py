@@ -46,7 +46,6 @@ class Product(models.Model):
         if self.reviews.count() > 0:
             total_score = sum([review.rating for review in self.reviews.all()])
             average_score = total_score / self.reviews.count()
-        print('score', average_score)
         return round(average_score, 1)
 
         
